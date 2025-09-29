@@ -21,3 +21,12 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    import pandas as pd
+    
+    # Leer el archivo TSV
+    df = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    
+    # Contar la frecuencia de cada valor en la columna c1
+    resultado = df['c1'].value_counts().sort_index()
+    
+    return resultado

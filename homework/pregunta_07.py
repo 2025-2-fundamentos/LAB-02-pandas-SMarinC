@@ -20,3 +20,12 @@ def pregunta_07():
     E    67
     Name: c2, dtype: int64
     """
+    import pandas as pd
+    
+    # Leer el archivo TSV
+    df = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    
+    # Agrupar por c1 y calcular la suma de c2
+    resultado = df.groupby('c1')['c2'].sum()
+    
+    return resultado
